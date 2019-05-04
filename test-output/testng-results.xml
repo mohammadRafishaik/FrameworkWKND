@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[Test Is start for every method]]>
+    </line>
+    <line>
+      <![CDATA[All methods report is captured]]>
+    </line>
+    <line>
+      <![CDATA[Attach screensshots to html report]]>
+    </line>
+    <line>
+      <![CDATA[Executuion Is Done]]>
+    </line>
+    <line>
+      <![CDATA[Attach screensshots to html report]]>
+    </line>
+    <line>
+      <![CDATA[Executuion Is Done]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="11985" started-at="2019-05-04T05:51:44Z" finished-at="2019-05-04T05:51:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="11985" started-at="2019-05-04T05:51:44Z" finished-at="2019-05-04T05:51:56Z">
+      <class name="com.testexecution.Runcls">
+        <test-method status="PASS" signature="loadclass()[pri:0, instance:com.testexecution.Runcls@685cb137]" name="loadclass" is-config="true" duration-ms="150" started-at="2019-05-04T05:51:44Z" finished-at="2019-05-04T05:51:44Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test Is start for every method]]>
+            </line>
+            <line>
+              <![CDATA[All methods report is captured]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loadclass -->
+        <test-method status="PASS" signature="mainexecution()[pri:0, instance:com.testexecution.Runcls@685cb137]" name="mainexecution" duration-ms="6068" started-at="2019-05-04T05:51:44Z" finished-at="2019-05-04T05:51:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mainexecution -->
+        <test-method status="PASS" signature="capturescreesn(org.testng.ITestResult)[pri:0, instance:com.testexecution.Runcls@685cb137]" name="capturescreesn" is-config="true" duration-ms="559" started-at="2019-05-04T05:51:50Z" finished-at="2019-05-04T05:51:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=mainexecution status=SUCCESS method=Runcls.mainexecution()[pri:0, instance:com.testexecution.Runcls@685cb137] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Attach screensshots to html report]]>
+            </line>
+            <line>
+              <![CDATA[Executuion Is Done]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- capturescreesn -->
+        <test-method status="PASS" signature="leave()[pri:1, instance:com.testexecution.Runcls@685cb137]" name="leave" duration-ms="5027" started-at="2019-05-04T05:51:50Z" finished-at="2019-05-04T05:51:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- leave -->
+        <test-method status="PASS" signature="capturescreesn(org.testng.ITestResult)[pri:0, instance:com.testexecution.Runcls@685cb137]" name="capturescreesn" is-config="true" duration-ms="315" started-at="2019-05-04T05:51:55Z" finished-at="2019-05-04T05:51:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=leave status=SUCCESS method=Runcls.leave()[pri:1, instance:com.testexecution.Runcls@685cb137] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Attach screensshots to html report]]>
+            </line>
+            <line>
+              <![CDATA[Executuion Is Done]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- capturescreesn -->
+      </class> <!-- com.testexecution.Runcls -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
