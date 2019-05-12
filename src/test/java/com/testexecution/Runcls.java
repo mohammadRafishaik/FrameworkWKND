@@ -14,18 +14,19 @@ public class Runcls extends WebCommanmethods {
 	public static Webcls appcls;
 	@Test(priority=0)
 	public void mainexecution() {
-logger=report.createTest("login crm");
+		
+looger=report.createTest("Login Hrm");
 driver=WebCommanmethods.getbrowser("Chrome");
-
-logger.info("From Base Execution");
  appcls=PageFactory.initElements(driver, Webcls.class);
 appcls.login();
 	}
 @Test(priority=1)
+
 public void leave() {
+looger=report.createTest("Apply Leave");
 appcls.applyleave();
-logger.pass("Successfully executed");
-//logger.fail("Unable to to compleate apply leave");
+looger.pass("Successfully executed");
+//looger.fail("Unable to compleate apply leave");
 	}
 	}
 

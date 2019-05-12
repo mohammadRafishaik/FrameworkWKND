@@ -5,9 +5,9 @@
     <classes>
       <class name="com.testexecution.Runcls">
         <methods>
-          <include name="capturescreesn"/>
+          <include name="extentsreporsample"/>
           <include name="leave"/>
-          <include name="loadclass"/>
+          <include name="capturescreen"/>
         </methods>
       </class> <!-- com.testexecution.Runcls -->
     </classes>

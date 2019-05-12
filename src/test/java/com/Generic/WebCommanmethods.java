@@ -6,13 +6,16 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
@@ -25,8 +28,9 @@ import com.aventstack.extentreports.MediaEntityModelProvider;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class WebCommanmethods {
+
 	public static  ExtentReports report;
-	public static  ExtentTest logger;
+	public static ExtentTest looger;
 	
 	public static WebDriver driver;
 	public static WebDriver getbrowser(String Browser) {
@@ -86,40 +90,49 @@ public static String gettimestgamp() {
 	
 	return datevalue.format(currentdateformet);
 }
+
 @BeforeSuite
-public void loadclass() {
-	Reporter.log("Test Is start for every method",true);
-	ExtentHtmlReporter extent=new ExtentHtmlReporter("E:\\Dp\\MBS_PROJECT\\HTMLREPORT"+gettimestgamp()+".html");
-	report=new ExtentReports();
-	report.attachReporter(extent);
-	Reporter.log("All methods report is captured",true);
+public static void extentsreporsample() {
 	
+	Reporter.log("Test is started",true);
+	ExtentHtmlReporter extent=new ExtentHtmlReporter("E:\\Dp\\MBS_PROJECT\\Reports\\Rep"+gettimestgamp()+".html");
+    report=new ExtentReports();
+    report.attachReporter(extent);
+    Reporter.log("all methods are executed",true);
 }
+
+
 @AfterMethod
-public void capturescreesn(ITestResult result) {
-	Reporter.log("Attach screensshots to html report",true);
-	if(result.getStatus()==ITestResult.SUCCESS) {
-		try
-		{
-		logger.pass("Test Success",MediaEntityBuilder.createScreenCaptureFromPath(getscreenshot()).build());
-	} 
-	catch (Exception  e) {
-		System.out.println(" unable to get screensshot for Success case "+e.getMessage());
+public static void capturescreen(ITestResult result) {
+	Reporter.log("Attaching screens to report",true);
+	if(result.getStatus()==ITestResult.SUCCESS)
+	{
+		try {
+			looger.pass("Test Is success",MediaEntityBuilder.createScreenCaptureFromPath(getscreenshot()).build());
+		} catch (IOException e) {
+			System.out.println("Screenshot is not attaching"+e.getMessage());
+		}
 	}
-		
-	}
-	else if(result.getStatus()==ITestResult.FAILURE) {
-		try
-		{
-		logger.pass("Test Success",MediaEntityBuilder.createScreenCaptureFromPath(getscreenshot()).build());
-	} 
-	catch (Exception  e) {
-		System.out.println("unable to get screensshot for Success case "+e.getMessage());
-	}	
-		
+
+	else if(result.getStatus()==ITestResult.FAILURE) 
+	{
+		try {
+			looger.fail("Test Is Failure",MediaEntityBuilder.createScreenCaptureFromPath(getscreenshot()).build());
+		} catch (IOException e) {
+			System.out.println("Screenshot is not attaching"+e.getMessage());
+
+		}
 	}
 	report.flush();
-	Reporter.log("Executuion Is Done");
+	Reporter.log("Execution is done");
+	
+	}
+public void dropdown(WebElement element,String Value) 
+{
+ 
+ Select sel=new Select(element);
+ sel.selectByValue(Value);
+	
 }
 
 }

@@ -7,6 +7,7 @@ import com.Generic.WebCommanmethods;
 
 public class Webcls {
 	Exceldatareader testdata=new Exceldatareader();
+	WebCommanmethods webc=new WebCommanmethods();
 	//Login Objects
 	@FindBy(id="txtUsername")WebElement Username;
 	@FindBy(id="txtPassword")WebElement password;
@@ -15,8 +16,10 @@ public class Webcls {
 	//Apply LeaveTab Objects
 	@FindBy(id="menu_leave_viewLeaveModule")WebElement Leavtab;
 	@FindBy(id="menu_leave_applyLeave")WebElement Applytab;
-	@FindBy(id="applyleave_txtLeaveType")WebElement leavetype;
-	@FindBy(xpath="//select[@id='applyleave_txtLeaveType']/option[2]")WebElement option;
+	@FindBy(xpath="//select[@id='applyleave_txtLeaveType']") WebElement Leavetype;
+@FindBy(id="applyleave_txtFromDate")WebElement fromdate;
+@FindBy(className="ui-datepicker-year")WebElement year;
+
 	public void login() {
 		String username=testdata.getstringgetdata("Sheet1", 1, 1);
 		String Password=testdata.getstringgetdata("Sheet1", 1, 2);
@@ -29,9 +32,11 @@ public class Webcls {
 	public void applyleave() {
 	Leavtab.click();
 	Applytab.click();
-	leavetype.click();
-	option.click();
 	
+	webc.dropdown(Leavetype, "1");
+	
+	fromdate.click();
+	webc.dropdown(year, "2020");
 	
 
 	}
